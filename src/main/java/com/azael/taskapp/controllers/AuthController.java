@@ -42,8 +42,7 @@ public class AuthController {
     private AuthService authService;
 
    
-    @Operation(summary = "User login", description = "Authenticates a user by providing valid credentials (username and password). Returns a JWT token and user details upon successful login.", tags = {
-            "Authentication" })
+    @Operation(summary = "User login", description = "Authenticates a user by providing valid credentials (username and password). Returns a JWT token and user details upon successful login.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Login successful", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
                     +
@@ -88,8 +87,7 @@ public class AuthController {
     }
 
     
-    @Operation(summary = "Register a new user", description = "Registers a new user in the system by providing valid user details.", tags = {
-            "Authentication" })
+    @Operation(summary = "Register a new user", description = "Registers a new user in the system by providing valid user details.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "User successfully registered", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
                     +
@@ -140,8 +138,7 @@ public class AuthController {
     }
 
   
-    @Operation(summary = "Get authenticated user details", description = "Retrieves the details of the currently authenticated user. Requires a valid JWT token with ADMIN or USER role.", tags = {
-            "Authentication" }, security = @SecurityRequirement(name = "bearer-key")
+    @Operation(summary = "Get authenticated user details", description = "Retrieves the details of the currently authenticated user. Requires a valid JWT token with ADMIN or USER role.", security = @SecurityRequirement(name = "bearer-key")
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "User data retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
@@ -193,8 +190,7 @@ public class AuthController {
     }
 
     
-    @Operation(summary = "User logout", description = "Closes the session of the currently authenticated user by invalidating their JWT token. Requires a valid Bearer token.", tags = {
-            "Authentication" }, security = @SecurityRequirement(name = "bearer-key")
+    @Operation(summary = "User logout", description = "Closes the session of the currently authenticated user by invalidating their JWT token. Requires a valid Bearer token.", security = @SecurityRequirement(name = "bearer-key")
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Logout successful", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
@@ -233,8 +229,7 @@ public class AuthController {
                 null);
     }
 
-    @Operation(summary = "Refresh JWT token", description = "Updates the JWT token by providing a valid refresh token and the current Authorization header. Requires a valid Bearer token.", tags = {
-            "Authentication" }, security = @SecurityRequirement(name = "bearer-key")
+    @Operation(summary = "Refresh JWT token", description = "Updates the JWT token by providing a valid refresh token and the current Authorization header. Requires a valid Bearer token.", security = @SecurityRequirement(name = "bearer-key")
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Token refreshed successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
