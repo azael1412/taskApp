@@ -31,6 +31,7 @@ notes.txt
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+/logs/**
 
 ### VS Code ###
 .vscode/
