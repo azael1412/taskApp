@@ -28,14 +28,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @RestController
 @RequestMapping("/catalogs")
 @SecurityRequirement(name = "bearer-key")
-@Tag(name = "Catalog", description = "Catalog-related operations")
+@Tag(name = "Catalog Management", description = "Catalog-related operations")
 public class CatalogController {
 
         @Autowired
         private CatalogService catalogService;
 
-        @Operation(summary = "Get all status", description = "Retrieves a list of all available statuses in the system.", tags = {
-                        "Catalog Management" })
+        @Operation(summary = "Get all status", description = "Retrieves a list of all available statuses in the system.")
         @ApiResponses(value = {
                         @ApiResponse(responseCode = "200", description = "Status retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
                                         +
@@ -73,8 +72,7 @@ public class CatalogController {
                                 status);
         }
 
-        @Operation(summary = "Get all roles", description = "Retrieves a list of all available roles in the system.", tags = {
-                        "Catalog Management" })
+        @Operation(summary = "Get all roles", description = "Retrieves a list of all available roles in the system.")
         @ApiResponses(value = {
                         @ApiResponse(responseCode = "200", description = "Roles retrieved successfully", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponseDto.class), examples = @ExampleObject(value = "{\n"
                                         +
